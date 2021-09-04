@@ -1,0 +1,18 @@
+<view class="wrap">
+  <input class="searchBox" type="text" placeholder="搜索歌曲" placeholder-class="placeholder" bindinput="search_input">
+<icon type="search" class="searchIcon"></icon>
+</input>
+<view class="songList">
+<!--歌曲列表-->
+<view class="item" wx:for="{{playList}}">
+<image class="pirurl" src="{{item.al.picUrl}}" lazy-load></image>
+<view class="center">
+  <view class="top">{{item.name}}</view>
+  <view class="bottom">
+    <image class="mv" src="../../img/MV.png" wx:if="{{item.mv>0}}"></image>
+  {{item.ar[0].name}}</view>
+</view>
+<image lazy-load class="playBtn" data-id="{{item.id}}" bindtap="toPlay" src="../../img/播放.png"></image>
+</view>
+</view>
+</view>

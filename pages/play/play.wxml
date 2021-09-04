@@ -1,0 +1,36 @@
+<view class="container">
+ <image class="bg" src="{{imgUrl}}"></image>
+ <!-- <view class="title">{{songName}}</view> -->
+ <view class="cir">
+  <image class="picUrl" src="{{imgUrl}}" style="animation-play-state: {{isPlay?'running':'paused'}};"></image>
+  <!-- 蒙层 -->
+  <view class="msk">
+    <image class="controll" src="{{(isPlay?'../../img/pause.png':'../../img/play.png')}}" bindtap="playOrPause"></image>
+  </view>
+ </view>
+ <scroll-view scroll-y class="lyric" scroll-top="{{scroll_top}}">
+   <!-- style="color:{{viewTextColor}}" -->
+ <view wx:for="{{lyric}}" data-text="{{item[0]}}" bindtap="lrcTap" data-key="{{index}}" class="{{current_item === index?'selected':' '}}">{{item[1]}}</view>
+ </scroll-view>
+ <button class="btn" open-type="share">分享给微信好友</button>
+ <view class="tap"></view>
+ <!-- 上一曲，下一曲 -->
+ <view class="father">
+  <view class="left" bindtap="togglePlay" data-text="left">{{'<'}}</view>
+  <view class="right" bindtap="togglePlay" data-text="right">{{'>'}}</view>
+ </view> 
+</view>
+<audio src="{{musicUrl}}" id="myAudio" bindtimeupdate="timeUpdate"></audio>
+<view class="songList">
+<view class="playAllBtn">
+<text class="count">精选热评{{clength}}条</text>
+</view>
+<!--评论列表-->
+<view class="item" wx:for="{{contents}}">
+<image class="pirurl" src="../../img/音乐人.png" lazy-load></image>
+<view class="center">
+  <view class="bottom">{{item.commentId}}</view>
+  <view class="top">{{item.content}}</view>
+</view>
+</view>
+</view>

@@ -1,0 +1,170 @@
+.bg{
+  width: 100%;
+  /* 模糊效果 */
+  height: 700px;
+  filter: blur(15px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.container{
+   padding-top: 150rpx;
+}
+/* .title{
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin: 60rpx 0rpx;
+} */
+.cir{
+  width: 206px;
+  height: 205px;
+  margin: 0 auto;
+  position: relative;
+}
+.picUrl{
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+  position: relative;
+  left: 20%;
+  top: 20%;
+  animation: rotate 30s linear infinite;
+}
+/* 旋转动画 */
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.msk{
+  height: 100%;
+  width: 100%;
+  background-image: url("https://music.163.com/style/web2/img/coverall.png?b499a60%E2%80%A6");
+  background-position: -140px -580px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+.msk .controll{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.lyric {
+  /* width: 600rpx;
+  margin: 0 auto; */
+  height: 280rpx;
+}
+.lyric view{
+  color: #aaa;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.selected{
+  color: #fff !important;
+}
+.btn{
+  width: 200rpx;
+  height: 80rpx;
+  border: 1px solid #aaa;
+  background-color: transparent;
+  font-size:30rpx;
+  font-weight: normal;
+  color: #fff;
+  border-radius: 50rpx;
+  margin: 0 auto ;
+  margin-top: 40rpx;
+}
+.tap{
+  width: 140px;
+  height: 10px;
+  background-color: #fff;
+  position: fixed;
+  border-radius: 4px;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -70px;
+}
+/* 上下曲切换 */
+.father{
+  width: 100%;
+  height:60rpx;
+  margin: 0 auto;
+}
+.left,.right{
+  position: absolute;
+  height: 70rpx;
+  width: 70rpx;
+  font-size: 45rpx;
+  border: 2rpx solid #fff;
+  color:#fff;
+  text-align: center;
+  vertical-align: middle;
+  /* background-color: chartreuse; */
+  border-radius: 50%;
+}
+.left{
+  left:0;
+  top:27%;
+  margin-top:10rpx;
+}
+.right{
+  left: 90%;
+  top: 27%;
+  margin-top:10rpx;
+}
+
+.songList{
+  background-color: #fff;
+  border-radius:20px 20px 0 0 ;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+}
+.playAllBtn{
+  height: 60rpx;
+  margin-bottom: 30rpx;
+  color: #000;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.playAllBtn>image{
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 15rpx;
+  margin-right: 15rpx;
+}
+.count{
+  font-size: 24rpx;
+  color: #cccccc;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+}
+.item>.pirurl{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+}
+.item>.center{
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.item>.center>.bottom{
+  font-size: 25rpx;
+  color: #dddddd;
+  display: flex;
+  flex-direction: row;
+}
